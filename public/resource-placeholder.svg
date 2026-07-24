@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title description">
+  <title id="title">Resource image unavailable</title>
+  <desc id="description">A calm abstract landscape in green tones</desc>
+  <rect width="800" height="600" fill="#dce8de"/>
+  <circle cx="624" cy="142" r="68" fill="#8dc3a8"/>
+  <path d="M0 394 176 220l128 132 112-106 164 148 104-92 116 102v196H0Z" fill="#6d9b82"/>
+  <path d="M0 458 194 330l116 92 126-110 172 148 98-72 94 70v142H0Z" fill="#356b55"/>
+  <path d="M0 516c162-52 302-45 424 19 127 66 252 66 376 1v64H0Z" fill="#173f32"/>
+</svg>

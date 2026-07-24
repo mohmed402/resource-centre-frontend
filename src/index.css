@@ -1,0 +1,89 @@
+:root {
+  --text: #53615d;
+  --text-h: #10221d;
+  --bg: #f7f9f5;
+  --surface: #ffffff;
+  --surface-muted: #eef4ec;
+  --border: #dce5da;
+  --border-strong: #c8d8c4;
+  --accent: #26745b;
+  --accent-strong: #133f33;
+  --shadow-soft: 0 18px 40px rgba(47, 72, 58, 0.08);
+
+  --sans: Avenir, 'Avenir Next', 'Trebuchet MS', sans-serif;
+  --heading: Georgia, 'Times New Roman', serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #bccbc4;
+    --text-h: #f2f7f4;
+    --bg: #111a16;
+    --surface: #18251f;
+    --surface-muted: #203029;
+    --border: #31443b;
+    --border-strong: #486357;
+    --accent: #8ed3ad;
+    --accent-strong: #bee9cf;
+    --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.24);
+  }
+}
+
+#root {
+  min-width: 320px;
+  min-height: 100svh;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+h1 {
+  max-width: 760px;
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+  line-height: 0.96;
+  letter-spacing: 0;
+  margin: 0 0 22px;
+  @media (max-width: 1024px) {
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 1.8rem;
+  line-height: 1.1;
+  letter-spacing: 0;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 1.45rem;
+  }
+}
+p {
+  margin: 0;
+}
