@@ -29,12 +29,6 @@ The main objective is to demonstrate:
 - **ESLint** – code-quality checks
 - **Prettier** – consistent formatting
 
-Optional additions:
-
-- **React Router** if resource details are shown on a separate route
-- **Zod** if runtime validation of the mock data is desired
-- **Playwright** or **Cypress** for an end-to-end test
-
 ---
 
 ## 3. Required Resource Categories
