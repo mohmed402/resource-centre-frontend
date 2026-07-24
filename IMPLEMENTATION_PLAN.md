@@ -89,9 +89,9 @@ Create a local mock-data file, for example:
 src/data/resources.ts
 ```
 
-Include enough data to demonstrate all functionality properly:
+Include a concise mock dataset that represents every required category:
 
-- At least two resources per category
+- One resource per category
 - Different upload dates
 - A variety of titles and tags
 - No resource with more than three tags
@@ -172,13 +172,15 @@ The details view should support:
 Add a sorting control with options such as:
 
 - Default category order
+- Title A–Z
+- Title Z–A
+- Shortest first
+- Longest first
 - Category A–Z
-- Newest first
-- Oldest first
 
 The sorting logic should be stored in a pure utility function so it can be tested independently.
 
-If the resources are grouped by category, date sorting can be applied within each category.
+Because the final mock dataset contains one resource per category, title and duration sorting reorder the category sections according to their resource.
 
 ### Feature 3: Filtering
 
@@ -329,9 +331,9 @@ Then implement the filter logic and search input.
 
 Write tests confirming that:
 
-- Newest-first sorting works.
-- Oldest-first sorting works.
-- Alphabetical category sorting works if included.
+- Title A–Z and Z–A sorting works.
+- Shortest-first and longest-first sorting uses `durationMinutes`.
+- Alphabetical category sorting works.
 - The original mock-data array is not mutated.
 
 Then implement the sorting control.
@@ -349,7 +351,7 @@ Test pure utility functions:
 - Grouping resources
 - Filtering by title
 - Filtering by tags
-- Sorting by upload date
+- Sorting by title and duration
 - Sorting by category
 - Duration label formatting
 
@@ -490,7 +492,7 @@ test: add resource filtering tests
 feat: filter resources by title and tags
 
 test: add resource sorting tests
-feat: sort resources by date and category
+feat: sort resources by title, duration, and category
 
 style: add responsive resource centre layout
 fix: improve keyboard navigation and focus states
@@ -638,7 +640,7 @@ For the best balance between quality and available time, prioritise:
 1. Grouped resource display
 2. Resource details modal or side panel
 3. Search by title and tags
-4. Sort by newest and oldest upload date
+4. Sort by title, duration, and category
 5. Unit and component tests written before implementation
 6. Responsive and accessible card layout
 7. Clear README documentation
