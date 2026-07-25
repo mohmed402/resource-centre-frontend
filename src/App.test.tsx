@@ -165,6 +165,40 @@ describe('App', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   })
 
+  it('closes details when the backdrop is clicked', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+    const card = screen.getByRole('button', {
+      name: /view details for mindful moments/i,
+    })
+
+    await user.click(card)
+    const dialog = screen.getByRole('dialog', { name: /mindful moments/i })
+    const backdrop = dialog.parentElement
+
+    expect(backdrop).not.toBeNull()
+    await user.click(backdrop as HTMLElement)
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    expect(card).toHaveFocus()
+  })
+
+  it('keeps details open when the dialog itself is clicked', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(
+      screen.getByRole('button', {
+        name: /view details for mindful moments/i,
+      }),
+    )
+    const dialog = screen.getByRole('dialog', { name: /mindful moments/i })
+
+    await user.click(dialog)
+
+    expect(dialog).toBeInTheDocument()
+  })
+
   it('allows a keyboard user to open a resource card', async () => {
     const user = userEvent.setup()
     render(<App />)

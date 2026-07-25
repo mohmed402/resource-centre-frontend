@@ -68,8 +68,14 @@ export function ResourceDetails({ resource, onClose }: ResourceDetailsProps) {
     }
   }
 
+  const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) {
+      onClose()
+    }
+  }
+
   return (
-    <div className={styles.backdrop}>
+    <div className={styles.backdrop} onClick={handleBackdropClick}>
       <div
         aria-describedby="resource-details-description"
         aria-labelledby="resource-details-title"
